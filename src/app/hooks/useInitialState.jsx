@@ -4,8 +4,13 @@ import initialState from '../../initialState'
 const useInitialState = () => {
   const [state, setState] = useState(initialState)
 
-  const setWord = (setNewWord) => {
-    setState({...state, word:(setNewWord)})
+  const setWord = (setNewWord, time) => {
+    setState({...state, word:(setNewWord), renderWord:(setNewWord)})
+
+    setTimeout(() => {
+      // console.log('int')
+      setState({...state, word:(setNewWord), renderWord:(" ")})
+    }, time);
   }
 
   const newWord = () => {
@@ -14,17 +19,17 @@ const useInitialState = () => {
     if(state.levelValue === 1 ) {
       const wordRender = state.levelOne.words[randomNumber()];
       // setState({...state, word:wordRender})
-      setWord(wordRender)
+      setWord(wordRender, state.levelOne.time)
     }
 
     else if (state.levelValue === 2 ) {
       const wordRender = state.levelTwo.words[randomNumber()];
-      setWord(wordRender)
+      setWord(wordRender, state.levelTwo.time)
     }
 
     else if (state.levelValue === 3 ) {
       const wordRender = state.levelThree.words[randomNumber()];
-      setWord(wordRender)
+      setWord(wordRender, state.levelThree.time)
     }
 
   }

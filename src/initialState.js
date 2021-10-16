@@ -1,9 +1,10 @@
 export default {
   levelValue : 1,
-  word: "",
+  word: " ",
+  renderWord:" ",
   points : 0,
   strike : 0,
-  level : {},
+  timeRender: 0,
   levelOne:{
     words:[
       "Uno",
@@ -27,7 +28,7 @@ export default {
       "Mulan",
       "Mushu",
       ],
-    time: 1.5
+    time: 1500
   },
   levelTwo:{
     words:[
@@ -53,7 +54,7 @@ export default {
       "Asteroide",
       "Pluralidad",
     ],
-    time: 1
+    time: 1000
   },
   levelThree:{
     words:[
@@ -79,6 +80,6 @@ export default {
       "Caida placentera",
       "Clara oscuridad"
     ],
-    time: 0.9
+    time: 900
   }
 }
