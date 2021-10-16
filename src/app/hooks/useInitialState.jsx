@@ -29,9 +29,29 @@ const useInitialState = () => {
 
   }
 
+  const setPointsUp = () => {
+    if (state.points < 3) {
+      setState({...state, points:(state.points + 1)})
+    } else if ( state.points === 3) {
+      setState({...state, levelValue:(state.levelValue + 1), points:(0)})
+    }
+  }
+
+  const setPointsDown = () => {
+    if (state.points > 0) {
+      setState({...state, points:(state.points - 1)})
+    } else if ( state.points === 0 && state.levelValue > 1) {
+      setState({...state, levelValue:(state.levelValue - 1)})
+    } else { 
+      setState({...state, strike:(state.strike + 1)})
+     }
+  }
+
   return {
     state,
-    newWord
+    newWord,
+    setPointsUp,
+    setPointsDown
   }
 }
 

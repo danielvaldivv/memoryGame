@@ -4,11 +4,32 @@ import AppContext from '../context/AppContext';
 
 import Description from '../components/Description';
 import StartGameButton from '../components/StartGameButton';
+import WordRender from '../components/WordRender';
+import Verification from '../components/Verification';
 
 const App = () => {
 
   const initialState = useInitialState();
   console.log(initialState.state)
+
+  let render
+
+  if (initialState.state.strike === 3) { render = <h3>You Lose</h3>}
+
+  else if (initialState.state.levelValue===3 && initialState.state.points ===3){ render = <h3>You Win</h3>}
+
+  else {
+    render =
+      <section className="MemoryGame--Interface">
+        <p>Level:{initialState.state.levelValue}</p>
+        <p>Points:{initialState.state.points}</p>
+        <p>Strike{initialState.state.strike}</p>
+        <StartGameButton />
+        <WordRender />
+        <Verification />
+      </section>
+  }
+
 
   return (
     <AppContext.Provider value={initialState}>
@@ -18,13 +39,7 @@ const App = () => {
 
       <main>
         <Description />
-        <section className="MemoryGame--Interface">
-          <StartGameButton />
-          <h3>{initialState.state.word}</h3>
-          <form>
-            <input type="text" id="word" placeholder="Ingresa el texto del recuadro azúl" />
-          </form>
-        </section>
+        {render}
       </main>
     </AppContext.Provider>
   )
