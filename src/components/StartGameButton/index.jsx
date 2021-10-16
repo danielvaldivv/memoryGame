@@ -6,7 +6,7 @@ const StartGameButton = () => {
 
   return (
     <>
-      <button type="button" onClick={ newWord } >start!</button>
+      <button type="button" onClick={ newWord } >Nueva Palabra</button>
     </>
   )
 }

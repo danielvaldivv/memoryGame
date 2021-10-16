@@ -10,9 +10,9 @@ const Verification = () => {
 
   const compareWords = () => {
     const wordInput = document.getElementById("word").value.toLowerCase()
+
     if (wordInput === wordState) { setPointsUp() }
     else { setPointsDown()}
-
   }
 
   return (
