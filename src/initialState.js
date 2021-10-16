@@ -1,5 +1,5 @@
 export default {
-  levelValue : 3,
+  levelValue : 2,
   word: "",
   points : 0,
   strike : 0,
