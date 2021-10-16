@@ -1,4 +1,9 @@
 export default {
+  levelValue : 3,
+  word: "",
+  points : 0,
+  strike : 0,
+  level : {},
   levelOne:{
     words:[
       "Uno",
