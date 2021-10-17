@@ -1,4 +1,5 @@
 export default {
+  disabledInput: true,
   levelValue : 1,
   word: " ",
   renderWord:" ",

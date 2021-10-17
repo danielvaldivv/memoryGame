@@ -3,7 +3,7 @@ import AppContext from '../../context/AppContext'
 
 const Verification = () => {
   const { state, setPointsUp, setPointsDown } = useContext(AppContext)
-  const { word } = state
+  const { word, disabledInput } = state
   const wordState = word.toLowerCase()
 
   // const shoot = undefined
@@ -17,8 +17,8 @@ const Verification = () => {
 
   return (
     <form >
-      <input id="word" type="text" placeholder="Ingresa el texto del recuadro azúl" word="word" />
-      <button type="button" onClick={ compareWords }>Comparar</button>
+      <input id="word" type="text" placeholder="Ingresa el texto del recuadro azúl" word="word" disabled={disabledInput} />
+      <button type="button" onClick={ compareWords } disabled={disabledInput}>Comparar</button>
     </form>
   )
 };
