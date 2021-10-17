@@ -1,5 +1,5 @@
 import React from 'react'
-import useInitialState from './hooks/useInitialState';
+import useInitialState from '../hooks/useInitialState';
 import AppContext from '../context/AppContext';
 
 import Description from '../components/Description';
@@ -21,9 +21,9 @@ const App = () => {
   else {
     render =
       <section className="MemoryGame--Interface">
-        <p>Level:{initialState.state.levelValue}</p>
-        <p>Points:{initialState.state.points}</p>
-        <p>Strike{initialState.state.strike}</p>
+        <p>Level:{initialState.state.levelValue} de 3</p>
+        <p>Points:{initialState.state.points} de 2</p>
+        <p>Strike:{initialState.state.strike} de 3</p>
         <StartGameButton />
         <WordRender />
         <Verification />
@@ -38,8 +38,8 @@ const App = () => {
       </header>
 
       <main>
-        <Description />
         {render}
+        <Description />
       </main>
     </AppContext.Provider>
   )
