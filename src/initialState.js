@@ -1,5 +1,6 @@
 export default {
   disabledInput: true,
+  disabledWordGenerator: false,
   levelValue : 1,
   word: " ",
   renderWord:" ",

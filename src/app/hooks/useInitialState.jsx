@@ -5,22 +5,17 @@ const useInitialState = () => {
   const [state, setState] = useState(initialState)
 
   const setWord = (setNewWord, time) => {
-    setState({...state, word:(setNewWord), renderWord:(setNewWord), disabledInput:(false)})
+    setState({...state, word:(setNewWord), renderWord:(setNewWord), disabledInput:(false), disabledWordGenerator:(true)})
 
     setTimeout(() => {
       // console.log('int')
-      setState({...state, word:(setNewWord), renderWord:(" "), disabledInput:(false)})
+      setState({...state, word:(setNewWord), renderWord:(" "), disabledInput:(false), disabledWordGenerator:(true)})
     }, time);
   }
-
-  // const disabledInputSwitch = () => {
-  //   setState({...state, })
-  // }
 
   const newWord = () => {
     const randomNumber = () => (parseInt(Math.random() * (20 - 0)))
 
-    // disabledInputSwitch()
 
     if(state.levelValue === 1 ) {
       const wordRender = state.levelOne.words[randomNumber()];
@@ -42,20 +37,20 @@ const useInitialState = () => {
 
   const setPointsUp = () => {
     if (state.points < 2) {
-      setState({...state, points:(state.points + 1), word:(""), disabledInput:(true)})
+      setState({...state, points:(state.points + 1), word:(""), disabledInput:(true), disabledWordGenerator:(false)})
     } else if ( state.points === 2) {
-      setState({...state, levelValue:(state.levelValue + 1), points:(0), word:(""),  disabledInput:(true)})
+      setState({...state, levelValue:(state.levelValue + 1), points:(0), word:(""),  disabledInput:(true), disabledWordGenerator:(false)})
     }
 
   }
 
   const setPointsDown = () => {
     if (state.points > 0) {
-      setState({...state, points:(state.points - 1),  disabledInput:(true)})
+      setState({...state, points:(state.points - 1),  disabledInput:(true), disabledWordGenerator:(false)})
     } else if ( state.points === 0 && state.levelValue > 1) {
-      setState({...state, levelValue:(state.levelValue - 1),  disabledInput:(true)})
+      setState({...state, levelValue:(state.levelValue - 1),  disabledInput:(true), disabledWordGenerator:(false)})
     } else {
-      setState({...state, strike:(state.strike + 1),  disabledInput:(true)})
+      setState({...state, strike:(state.strike + 1),  disabledInput:(true), disabledWordGenerator:(false)})
     }
   }
 
