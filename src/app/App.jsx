@@ -16,7 +16,7 @@ const App = () => {
 
   if (initialState.state.strike === 3) { render = <h3>You Lose</h3>}
 
-  else if (initialState.state.levelValue===3 && initialState.state.points ===3){ render = <h3>You Win</h3>}
+  else if (initialState.state.levelValue===3 && initialState.state.points ===2){ render = <h3>You Win</h3>}
 
   else {
     render =
