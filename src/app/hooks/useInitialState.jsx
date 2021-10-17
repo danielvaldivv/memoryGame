@@ -35,9 +35,9 @@ const useInitialState = () => {
   }
 
   const setPointsUp = () => {
-    if (state.points < 3) {
+    if (state.points < 2) {
       setState({...state, points:(state.points + 1), word:("")})
-    } else if ( state.points === 3) {
+    } else if ( state.points === 2) {
       setState({...state, levelValue:(state.levelValue + 1), points:(0), word:("")})
     }
 
@@ -48,9 +48,9 @@ const useInitialState = () => {
       setState({...state, points:(state.points - 1)})
     } else if ( state.points === 0 && state.levelValue > 1) {
       setState({...state, levelValue:(state.levelValue - 1)})
-    } else { 
+    } else {
       setState({...state, strike:(state.strike + 1)})
-     }
+    }
   }
 
   return {
