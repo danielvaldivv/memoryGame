@@ -1,4 +1,4 @@
-import React, { useContext  } from 'react'
+import React, { useContext, useState  } from 'react'
 import AppContext from '../../context/AppContext'
 
 import './Verification.styl'
@@ -8,19 +8,30 @@ const Verification = () => {
   const { word, disabledInput } = state
   const wordState = word.toLowerCase()
 
-  // const shoot = undefined
+  const [wordInput, setWordInput] = useState("");
 
-  const compareWords = () => {
-    const wordInput = document.getElementById("word").value.toLowerCase()
+  const handleChange = (event) => {
+    setWordInput(event.target.value)
+  }
+  
+  const compareWords = (wordInt) => {
 
-    if (wordInput === wordState) { setPointsUp() }
+    if (wordInt === wordState) { setPointsUp() }
     else { setPointsDown()}
+
   }
 
+  const handleSubmit = (event) => {
+    compareWords(wordInput)
+    setWordInput("")
+    event.preventDefault()
+  }
+
+
   return (
-    <form >
-      <input id="word" type="text" placeholder="Ingresa el texto del recuadro" word="word" disabled={disabledInput} /> <br/>
-      <button type="button" onClick={ compareWords } disabled={disabledInput}>Comparar</button>
+    <form onSubmit={handleSubmit} >
+      <input id="word" type="text" value={wordInput} placeholder="Ingresa el texto del recuadro" onChange={handleChange} disabled={disabledInput} /> <br/>
+      <button type="submit" disabled={disabledInput}>Comparar</button>
     </form>
   )
 };
