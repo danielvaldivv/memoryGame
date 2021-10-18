@@ -7,6 +7,8 @@ import StartGameButton from '../components/StartGameButton';
 import WordRender from '../components/WordRender';
 import Verification from '../components/Verification';
 
+import './App.styl'
+
 const App = () => {
 
   const initialState = useInitialState();

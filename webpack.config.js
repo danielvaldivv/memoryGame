@@ -30,13 +30,13 @@ module.exports = {
         ],
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css|styl)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
-          'sass-loader',
+          'stylus-loader',
         ],
       },
       {
