@@ -24,9 +24,9 @@ const App = () => {
     render =
       <section className="MemoryGame--Interface">
         <section className="MemoryGame--Interface__info">
-          <p>Level: {initialState.state.levelValue} de 3</p>
-          <p>Points: {initialState.state.points} de 2</p>
-          <p>Strike: {initialState.state.strike} de 3</p>
+          <p>Level: <span className="levels">{initialState.state.levelValue}</span> de <span> 3</span></p>
+          <p>Points: <span className="points">{initialState.state.points}</span> de <span> 2</span></p>
+          <p>Strike: <span className="strikes">{initialState.state.strike}</span> de <span> 3</span></p>
         </section>
         <StartGameButton />
         <WordRender />
