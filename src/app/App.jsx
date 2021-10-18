@@ -12,7 +12,7 @@ import './App.styl'
 const App = () => {
 
   const initialState = useInitialState();
-  console.log(initialState.state)
+  // console.log(initialState.state)
 
   let render
 
