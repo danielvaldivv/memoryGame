@@ -7,7 +7,12 @@ const StartGameButton = () => {
 
   return (
     <>
-      <button type="button" onClick={ newWord } disabled={disabledWordGenerator} >Nueva Palabra</button>
+      <button
+        className="StartGame"
+        type="button"
+        onClick={ newWord }
+        disabled={disabledWordGenerator}
+      >Nueva Palabra</button>
     </>
   )
 }
