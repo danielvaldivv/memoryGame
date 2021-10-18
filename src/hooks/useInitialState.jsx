@@ -5,7 +5,7 @@ const useInitialState = () => {
   const [state, setState] = useState(initialState)
 
   const setWord = (setNewWord, time) => {
-    setState({...state, word:(setNewWord), renderWord:(setNewWord), disabledInput:(false), disabledWordGenerator:(true)})
+    setState({...state, word:(setNewWord), renderWord:(setNewWord), disabledWordGenerator:(true)})
 
     setTimeout(() => {
       // console.log('int')
