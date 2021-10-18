@@ -11,14 +11,12 @@ const Verification = () => {
   const [wordInput, setWordInput] = useState("");
 
   const handleChange = (event) => {
-    setWordInput(event.target.value)
+    setWordInput(event.target.value.toLowerCase())
   }
   
   const compareWords = (wordInt) => {
-
     if (wordInt === wordState) { setPointsUp() }
     else { setPointsDown()}
-
   }
 
   const handleSubmit = (event) => {
@@ -30,7 +28,13 @@ const Verification = () => {
 
   return (
     <form onSubmit={handleSubmit} >
-      <input id="word" type="text" value={wordInput} placeholder="Ingresa el texto del recuadro" onChange={handleChange} disabled={disabledInput} /> <br/>
+      <input
+        id="word"
+        type="text"
+        value={wordInput}
+        placeholder="Ingresa el texto del recuadro"
+        onChange={handleChange} disabled={disabledInput}
+      /> <br/>
       <button type="submit" disabled={disabledInput}>Comparar</button>
     </form>
   )
