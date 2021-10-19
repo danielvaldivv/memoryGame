@@ -21,4 +21,4 @@
 
 ## Diaglama de flujo
 
-![img](https://imgur.com/a/rTyuANs)
+![img](https://i.ibb.co/KXJKkC2/Memory-Game-Flow-Chart.jpg)
